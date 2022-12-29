@@ -1,0 +1,12 @@
+# Create an entities card on a dashboard and paste this code into the yaml editor
+# You need to create a helper, type 'toggle' named to match the entity below
+# You also need the automation entries for sending an MQTT message ON/OFF
+
+type: entities
+entities:
+  - entity: input_boolean.prevent_deep_sleep
+  - entity: sensor.propane_level
+    secondary_info: last-updated
+title: IoT Deep Sleep Control
+show_header_toggle: false
+state_color: true

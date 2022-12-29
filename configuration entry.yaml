@@ -1,0 +1,6 @@
+mqtt:
+  sensor:
+    name: "Propane Level"
+    state_topic: propanemonitor/sensor/propane_sensor/state
+    unit_of_measurement: "%"
+    force_update: True

@@ -1,0 +1,38 @@
+# Watch the 'id' values, you may have to create your own
+# This code goes into your automations.yaml to enable/disable Deep
+# sleep at next wakeup.
+
+- id: '1671235051094'
+  alias: Propane Monitor OTA Mode On
+  description: Wake the propane monitor from sleep for OTA updates
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.prevent_deep_sleep
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: ota_mode
+      payload: 'ON'
+      retain: true
+  mode: single
+- id: '1672167637222'
+  alias: Propane Monitor OTA Mode OFF
+  description: Return to Deep Sleep Cycle
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.prevent_deep_sleep
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: ota_mode
+      payload: 'OFF'
+      retain: true
+  mode: single
