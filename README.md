@@ -49,6 +49,7 @@ For the purposes of setup and testing, I suggest the following:
  - fill in your own specific information in the areas marked by {}.
  - comment out the lambda line so that voltage values are reported instead of percentage
  - change update_interval: to 10secs
+ - Remove the api: section if you are pasting sections of this code into your own template. The api: section will cause the deep sleep to be overridden by rebooting the ESP after a short period of time.
 
 Save this file under /config/esphome
 Copy the code from configuration entry.yaml and paste into your own configuration.yaml. Double check your indentation after pasting.
